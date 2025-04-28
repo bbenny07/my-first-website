@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC25 - Футбольный симулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .page {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .active-page {
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .player-card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .player-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="page1" class="page active-page">
+        <h1>Добро пожаловать в FC25!</h1>
+        <p>FC25 - это новейший футбольный симулятор с революционной физикой, реалистичной графикой и полностью обновленным режимом карьеры. Играй за свои любимые клубы, создавай уникального игрока и покоряй футбольный Олимп!</p>
+        
+        <h2>Особенности:</h2>
+        <ul>
+            <li>Более 500 официальных клубов</li>
+            <li>Улучшенная система искусственного интеллекта</li>
+            <li>Режим легенды футбола</li>
+            <li>Динамическая погодная система</li>
+        </ul>
+        
+        <button class="button" onclick="showPage('page2')">Подробнее...</button>
+    </div>
+
+    <div id="page2" class="page">
+        <button class="button back-button" onclick="showPage('page1')">Назад</button>
+        
+        <h1>Легенды FC25</h1>
+        
+        <div class="player-card">
+            <img src="https://tmssl.akamaized.net/images/foto/galerie/kylian-mbappe-real-madrid-2024-25-presentation-1721130438-142555.jpg" alt="Килиан Мбаппе" class="player-image">
+            <h2>Килиан Мбаппе</h2>
+            <p>Французский форвард, известный своей невероятной скоростью и точностью удара. Самый молодой игрок в составе PSG.</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://assets.goal.com/images/v3/bltfb16e4541d1f2124/GOAL%20-%20Blank%20WEB%20-%20Facebook(2161).jpeg?auto=webp&format=pjpg&width=3840&quality=60" alt="Харри Кейн" class="player-image">
+            <h2>Харри Кейн</h2>
+            <p>Английский нападающий, капитан сборной Англии. Обладает феноменальным голевым чутьём и сильным ударом.</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://ichef.bbci.co.uk/ace/standard/981/cpsprodpb/5c38/live/16192430-f5ef-11ef-bd6e-cd71c2e1454a.jpg" alt="Лионель Месси" class="player-image">
+            <h2>Лионель Месси</h2>
+            <p>Аргентинский виртуоз, семикратный обладатель "Золотого мяча". Мастер дриблинга и точных передач.</p>
+        </div>
+
+        <div class="player-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Pele_by_John_Mathew_Smith.jpg/330px-Pele_by_John_Mathew_Smith.jpg" alt="Пеле" class="player-image">
+            <h2>Пеле</h2>
+            <p>Бразильская легенда, трёхкратный чемпион мира. Обладатель уникальной техники и футбольного интеллекта.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active-page');
+            });
+            document.getElementById(pageId).classList.add('active-page');
+        }
+    </script>
+</body>
+</html>
